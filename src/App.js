@@ -1,15 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Prueba from "./Prueba";
 import NavBar from "./components/NavBar";
+import ItemListContainer from "./components/ItemListContainer";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <div>
-        <h1>Body Pendiente</h1>
-      </div>
+      <ItemListContainer text={"Sin elementos existentes..."} />
     </div>
   );
 }

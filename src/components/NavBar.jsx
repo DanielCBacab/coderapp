@@ -8,11 +8,9 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-
+import CartWidget from './CartWidget'
 
 const pages = ['Inicio', 'Catálogo de casas', 'Ciudades'];
 const settings = ['Perfil', 'Cuenta', 'Panel de control', 'Cerrar sesión'];
@@ -41,8 +39,7 @@ export default function NavBar() {
     <Container maxWidth="xl" >
       <Toolbar disableGutters>
         <Typography
-                        variant="h6"
-                        
+          variant="h6"              
           noWrap
           component="div"
           sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
@@ -107,33 +104,7 @@ export default function NavBar() {
         </Box>
 
         <Box sx={{ flexGrow: 0 }}>
-          <Tooltip title="Abrir opciones">
-            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-            </IconButton>
-          </Tooltip>
-          <Menu
-            sx={{ mt: '45px' }}
-            id="menu-appbar"
-            anchorEl={anchorElUser}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseUserMenu}
-          >
-            {settings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">{setting}</Typography>
-              </MenuItem>
-            ))}
-          </Menu>
+          <CartWidget/>
         </Box>
       </Toolbar>
     </Container>

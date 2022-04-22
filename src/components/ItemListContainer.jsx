@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from "react";
+import ItemCount from "./ItemCount";
+import Grid from "@mui/material/Grid";
 
 export default function ItemListContainer({ text }) {
-    return (
-        <div>
-            <h1>{text}</h1>
-        </div>
-    )
+  //const [counter, setCounter] = useState(0);
+
+  return (
+    <Grid justifyContent="center" alignItems="center">
+      <h1>{text}</h1>
+      <ItemCount stock="10" initial="0" />
+    </Grid>
+  );
 }

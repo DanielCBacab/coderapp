@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { render } from "react-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -7,10 +6,11 @@ import Button from "@mui/material/Button";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import Grid from "@mui/material/Grid";
+import CardMedia from "@mui/material/CardMedia";
 
-export default function ItemCount({ initial, stock }) {
+export default function ItemCard({ item, initial }) {
   let [num, setNum] = useState(initial);
-  let [onStock, setOnStock] = useState(stock);
+  let [onStock, setOnStock] = useState(item.stock);
 
   // Incrementa el número a reservar por 1
   let add = () => {
@@ -37,12 +37,20 @@ export default function ItemCount({ initial, stock }) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardContent>
+        <CardMedia
+          component="img"
+          image={`https://picsum.photos/id/${item.id}00/300/200`}
+          alt={item.title}
+        />
         <Typography gutterBottom variant="h5" component="div">
-          Item name
+          {item.title}
+        </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+          Precio: {item.price}
         </Typography>
         <Typography variant="h6">Stock Disponible: {onStock}</Typography>
         <Typography variant="p" component="div">
-          Item description, on text line.
+          {item.shortDescription}
         </Typography>
         <Grid
           container

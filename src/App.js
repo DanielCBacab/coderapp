@@ -2,6 +2,7 @@ import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import { useState, useEffect } from "react";
 import "./App.css";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
   // const [items, setItems] = useState([]);
@@ -32,8 +33,9 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <h1>Lista de inmuebles</h1>
-      <ItemListContainer text={"Lista de productos"} />
+
+      {/* <ItemListContainer text={"Lista de productos"} /> */}
+      <ItemDetailContainer />
     </div>
   );
 }

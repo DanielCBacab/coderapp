@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import ItemList from "./ItemList";
 
-export default function ItemListContainer({ text }) {
+export default function ItemListContainer() {
   const [items, setItems] = useState([]);
   const itemsRE = [
     {

@@ -1,12 +1,14 @@
 import "./App.css";
-import RoutesSite from "../src/routes/RoutesSite";
 import GlobalProvider from "./context/GlobalStateContext";
-
+import RutasComp from "./routes";
+import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
-    <GlobalProvider>
-      <RoutesSite />
-    </GlobalProvider>
+    <div className="App">
+      <GlobalProvider>
+        <RutasComp />
+      </GlobalProvider>
+    </div>
   );
 }
 

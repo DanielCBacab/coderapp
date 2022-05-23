@@ -1,15 +1,19 @@
 import React from "react";
-import ItemCard from "./ItemCard";
-import Grid from "@mui/material/Grid";
+import { Container, Row, Col } from "react-bootstrap";
+import Item from "./Item";
 
-export default function ItemList({ name, id }) {
+const ItemList = ({ items }) => {
   return (
-    <>
-      {id.map((item) => (
-        <Grid item xs={3}>
-          <ItemCard name={item.name} initial={1} />
-        </Grid>
-      ))}
-    </>
+    <Container>
+      <Row className="justify-content-center">
+        {items.map((prod) => (
+          <Col xs={12} md={4}>
+            <Item key={prod.id} {...prod} />
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
-}
+};
+
+export default ItemList;

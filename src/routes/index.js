@@ -6,6 +6,7 @@ import Error from "../views/Error";
 import Checkout from "../views/Checkout";
 import Layout from "../components/Layout";
 import ItemDetailContainer from "../views/ItemDetailContainer";
+import ItemListContainer from "../components/ItemListContainer";
 
 const RutasComp = () => {
   return (
@@ -18,6 +19,7 @@ const RutasComp = () => {
             path="/item-detail/:itemId"
             element={<ItemDetailContainer />}
           />
+          <Route path="/categories/:catId" element={<ItemListContainer />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<Error />} />
         </Route>

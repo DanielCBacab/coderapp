@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
 import { GlobalContext } from "../context/GlobalStateContext";
 
@@ -12,6 +13,21 @@ const NavBar = () => {
       <Container>
         <Navbar.Brand href="/">DanielShop</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+
+            <NavDropdown title="Categorías" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/categories/smarthphone">
+                Smarthphones
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/categories/tablet">
+                Tablets
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
         <Nav>
           <Nav.Link href="/checkout">
             <span>
@@ -29,12 +45,6 @@ const NavBar = () => {
             </span>
           </Nav.Link>
         </Nav>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/categories">Categorías</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

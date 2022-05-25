@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Button from "react-bootstrap/Button";
 import { GlobalContext } from "../context/GlobalStateContext";
 
 const Cart = ({ name, price, cant, id }) => {
@@ -9,14 +10,14 @@ const Cart = ({ name, price, cant, id }) => {
       <h3>{name}</h3>
       <p>Precio: ${price}</p>
       <p>Cantidad: {cant}</p>
-      <button
-        clasName="btn btn-danger"
+      <Button
+        className="btn btn-danger"
         onClick={() => {
           removeOfCart(id);
         }}
       >
         Eliminar
-      </button>
+      </Button>
     </div>
   );
 };

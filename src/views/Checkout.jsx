@@ -10,6 +10,7 @@ const Checkout = () => {
   return (
     <Container>
       <Row className="justify-content-center my-5">
+        <Col></Col>
         <Col>
           {cart.length > 0 ? (
             <>

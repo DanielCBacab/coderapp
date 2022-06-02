@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { verificaSiExisteEnCarrito } from "../helpers/index";
 
 const ItemCount = ({ max, setCant, cant, onAdd }) => {
   const handleAddItem = () => {
@@ -23,7 +24,7 @@ const ItemCount = ({ max, setCant, cant, onAdd }) => {
       <div className="d-flex justify-content-between">
         <Button
           onClick={handleRemoveItem}
-          className={`btn-block ${cant === 0 ? "btn-secondary" : "btn-info"}`} //👈🏻 Optionanl styling, acompaña al control handleAddItem del ItemCount
+          className={`btn-block ${cant === 0 ? "btn-secondary" : "btn-info"}`}
           disabled={cant === 0}
         >
           -

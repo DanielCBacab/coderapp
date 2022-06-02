@@ -20,7 +20,7 @@ const Item = (props) => {
           </Link>
         </div>
         <small>
-          Categoría: <span class="badge bg-secondary">{category}</span>
+          Categoría: <span className="badge bg-secondary">{category}</span>
         </small>
       </Card.Body>
     </Card>

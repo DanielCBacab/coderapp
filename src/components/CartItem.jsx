@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
-import { GlobalContext } from "../context/GlobalStateContext";
+import { GlobalProvider } from "../context/GlobalStateContext";
 
 const Cart = ({ name, price, cant, id }) => {
-  const { removeOfCart } = useContext(GlobalContext);
+  const { removeOfCart } = useContext(GlobalProvider);
 
   return (
     <div>

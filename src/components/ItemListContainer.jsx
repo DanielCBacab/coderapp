@@ -5,9 +5,9 @@ import Col from "react-bootstrap/Col";
 import { useParams } from "react-router";
 import ItemList from "../components/ItemList";
 // Data request
-import { getData } from "../helpers/getData";
+
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "../firebase/config";
+import db from "../firebase/config";
 
 const ItemListContainer = (props) => {
   const [state, setState] = useState([]);

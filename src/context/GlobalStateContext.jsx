@@ -1,9 +1,11 @@
-import React, { createContext, useState } from "react";
-
+import React, { createContext, useState, useContext } from "react";
+import { unificarItems, verificaSiExisteEnCarrito } from "../helpers";
 // nombre del context que estan creando
-export const GlobalContext = createContext("");
+const GlobalContext = createContext();
 
-const GlobalProvider = ({ children }) => {
+export const GlobalProvider = () => useContext(GlobalContext);
+
+const GlobalState = ({ children }) => {
   // este componente sera el responsable de proveer info y almacenar info
   const [cart, setCart] = useState([]);
 
@@ -14,7 +16,9 @@ const GlobalProvider = ({ children }) => {
     setCart(cart.filter((prod) => prod.id !== id));
   };
 
-  const clearCart = () => setCart([]);
+  const clearCart = () => {
+    setCart([]);
+  };
 
   const totalShop = () => {
     return cart.reduce((acc, prod) => acc + prod.price * prod.cant, 0);
@@ -45,4 +49,4 @@ const GlobalProvider = ({ children }) => {
   );
 };
 
-export default GlobalProvider;
+export default GlobalState;

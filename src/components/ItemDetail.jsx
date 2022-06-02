@@ -2,12 +2,12 @@ import React, { useState, useContext } from "react";
 import { Row, Col, Image } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-import { GlobalContext } from "../context/GlobalStateContext";
+import { GlobalProvider } from "../context/GlobalStateContext";
 import ItemCount from "../components/ItemCount";
 const ItemDetail = (props) => {
   const { id, name, price, stock, description, img, category } = props;
-  const context = useContext(GlobalContext);
-  const { addToCart, isInCart } = useContext(GlobalContext);
+  const context = GlobalProvider();
+  const { addToCart, isInCart } = GlobalProvider();
   const [cant, setCant] = useState(0);
 
   const navigate = useNavigate();

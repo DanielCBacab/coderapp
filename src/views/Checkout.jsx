@@ -31,7 +31,6 @@ const Checkout = () => {
               <Button className="btn btn-danger" onClick={clearCart}>
                 Vaciar carrito
               </Button>
-              <Button className="btn btn-success">Terminar mi compra</Button>
             </div>
           </Col>
         </Row>

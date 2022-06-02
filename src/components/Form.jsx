@@ -39,9 +39,10 @@ const Form = ({ total, buyed }) => {
 
   const [form, setForm] = useState({
     buyer: {
-      email: "",
       name: "",
       lastName: "",
+      email: "",
+
       phone: "",
     },
     total: total,
@@ -54,6 +55,7 @@ const Form = ({ total, buyed }) => {
   } = form;
 
   const onSubmit = (e) => {
+    console.log({ datas: form });
     e.preventDefault();
     if (validateFullFilled([email, name, lastName, phone])) {
       Swal.fire({
@@ -91,7 +93,7 @@ const Form = ({ total, buyed }) => {
     setError({});
   };
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <h3 className="text-uppercase text-center my-4">Datos recipiente</h3>
       {Object.keys(form.buyer).map((key, index) => (
         <Input
@@ -112,7 +114,7 @@ const Form = ({ total, buyed }) => {
           <p className="fs-4 text-uppercase">Total</p>
         </div>
         <div className="col-12 col-lg-3">
-          <p className="fs-4"></p>
+          <p className="fs-4">${total}</p>
         </div>
         <button
           type="submit"

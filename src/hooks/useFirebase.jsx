@@ -13,7 +13,7 @@ import { GlobalProvider } from "../context/GlobalStateContext";
 const useFirebase = () => {
   const [products, setProducts] = useState([]);
   const [product, setProduct] = useState({});
-  const [setLoading] = GlobalProvider();
+  const { setLoading } = GlobalProvider();
 
   const fetchGetDataCollection = async () => {
     setLoading(true);

@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import { GlobalProvider } from "../context/GlobalStateContext";
 
 const Cart = ({ name, price, cant, id }) => {
-  const { removeOfCart } = useContext(GlobalProvider);
+  const { removeOfCart } = GlobalProvider();
 
   return (
     <div>

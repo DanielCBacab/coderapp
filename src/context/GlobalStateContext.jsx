@@ -8,9 +8,17 @@ export const GlobalProvider = () => useContext(GlobalContext);
 const GlobalState = ({ children }) => {
   // este componente sera el responsable de proveer info y almacenar info
   const [cart, setCart] = useState([]);
+  const [mostrarAlerta, setMostrarAlerta] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const addToCart = (item) => {
+    if (verificaSiExisteEnCarrito(cart, item)) {
+      setCart(unificarItems(cart, item));
+      setMostrarAlerta(true);
+      return;
+    }
     setCart([...cart, item]);
+    setMostrarAlerta(true);
   };
   const removeOfCart = (id) => {
     setCart(cart.filter((prod) => prod.id !== id));
@@ -42,6 +50,10 @@ const GlobalState = ({ children }) => {
         totalCant,
         isInCart,
         totalShop,
+        loading,
+        setLoading,
+        mostrarAlerta,
+        setMostrarAlerta,
       }}
     >
       {children}

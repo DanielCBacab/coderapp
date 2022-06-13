@@ -10,7 +10,6 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import db from "../firebase/config";
 
 const ItemListContainer = (props) => {
-  const [state, setState] = useState([]);
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const { catId } = useParams();
@@ -34,8 +33,8 @@ const ItemListContainer = (props) => {
 
   return (
     <Container>
-      <Row>
-        <h3>Lista de productos</h3>
+      <Row className="my-5 text-center text-success">
+        <h2>Lista de productos</h2>
       </Row>
       <Row>
         {loading ? (

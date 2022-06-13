@@ -25,8 +25,8 @@ const ItemDetailContainer = () => {
   }, [itemId]);
 
   return (
-    <Container fluid className="my-5">
-      <Row className="justify-content-center">
+    <Container fluid className="vh-100 d-flex align-items-center">
+      <Row className="justify-content-center align-items-center">
         {loading ? (
           <Col>
             <Spinner animation="border" role="status" variant="primary" />

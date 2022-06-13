@@ -9,9 +9,9 @@ const Checkout = () => {
   const { cart, clearCart, totalShop } = GlobalProvider();
 
   return (
-    <Container>
+    <Container className="vh-100 d-flex align-items-center">
       {cart.length > 0 ? (
-        <Row className="justify-content-center my-5">
+        <Row className="justify-content-center my-5 align-center">
           <Col>
             <Form total={dameTotat(cart)} buyed={cart} />
           </Col>

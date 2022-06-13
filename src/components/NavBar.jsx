@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -7,15 +7,15 @@ import Container from "react-bootstrap/Container";
 import { GlobalProvider } from "../context/GlobalStateContext";
 
 const NavBar = () => {
-  const { totalCant, cart } = GlobalProvider();
+  const { cart } = GlobalProvider();
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="success" expand="lg" variant="dark">
       <Container>
         <Navbar.Brand href="/">DanielShop</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+        <Navbar.Collapse id="basic-navbar-nav text-light">
+          <Nav className="me-auto text-light">
             <Nav.Link href="/">Home</Nav.Link>
 
             <NavDropdown title="Categorías" id="basic-nav-dropdown">

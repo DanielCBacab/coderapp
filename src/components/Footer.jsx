@@ -5,8 +5,8 @@ import Col from "react-bootstrap/Col";
 
 const Footer = () => {
   return (
-    <Container fluid className="bg-light mt-5">
-      <Row className="py-5">
+    <Container fluid className="bg-dark mt-auto">
+      <Row className="py-5 text-center text-light">
         <Col xs={12}>DanielShop 2022 - Todos los derechos reservados</Col>
       </Row>
     </Container>

@@ -6,8 +6,8 @@ import ItemListContainer from "../components/ItemListContainer";
 
 const Home = () => {
   return (
-    <Container>
-      <Row className="mt-5">
+    <Container className="vh-100 d-flex align-items-center">
+      <Row>
         <Col xs={12}>
           <ItemListContainer />
         </Col>

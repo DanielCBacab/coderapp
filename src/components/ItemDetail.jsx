@@ -20,10 +20,10 @@ const ItemDetail = (props) => {
 
   return (
     <>
-      <Col xs={4}>
+      <Col xs={7}>
         <Image src={img} fluid />
       </Col>
-      <Col xs={8}>
+      <Col xs={5}>
         <small>
           <span className="badge bg-secondary">{category}</span>
         </small>

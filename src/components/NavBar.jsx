@@ -33,7 +33,7 @@ const NavBar = () => {
               <NavDropdown.Item>
                 <NavLink
                   to="/categories/smarthphone"
-                  className="me-auto text-light text-decoration-none"
+                  className="me-auto text-dark text-decoration-none"
                 >
                   Smarthphones
                 </NavLink>
@@ -41,7 +41,7 @@ const NavBar = () => {
               <NavDropdown.Item>
                 <NavLink
                   to="/categories/tablet"
-                  className="me-auto text-light text-decoration-none"
+                  className="me-auto text-dark text-decoration-none"
                 >
                   Tablets
                 </NavLink>

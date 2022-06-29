@@ -69,6 +69,31 @@ const Form = ({ total, buyed }) => {
       title: "Bien hecho",
       text: "Hemos recibido su orden de compra",
       icon: "success",
+      html: `<table id="table" border=1 width="100%" style="text-align:initial !important">
+
+      <tbody>
+
+        <tr>
+          <td style="text-align:initial !important">Nombre del cliente</td>
+          <td style="text-align:initial !important">${
+            name + " " + lastName
+          }</td>
+        </tr>
+        <tr>
+          <td style="text-align:initial !important">correo</td>
+          <td style="text-align:initial !important">${email}</td>
+        </tr>
+        <tr>
+          <td style="text-align:initial !important">Teléfono</td>
+          <td style="text-align:initial !important">${phone}</td>
+        </tr>
+
+        <tr>
+        <td style="text-align:initial !important">Total compra</td>
+        <td style="text-align:initial !important">$ ${total}</td>
+      </tr>
+      </tbody>
+      </table>`,
     });
     fetchGenerateTicket({ datas: form });
     clearCart();

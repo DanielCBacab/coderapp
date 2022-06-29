@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
   }, [itemId]);
 
   return (
-    <Container fluid className="vh-100 d-flex align-items-center">
+    <Container fluid className="my-5 vh-100 d-flex align-items-center">
       <Row className="justify-content-center align-items-center">
         {loading ? (
           <Col>
